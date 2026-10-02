@@ -51,8 +51,8 @@ operators \(|\)|\[|\]|\{|\}|->|\.|\,|\.\.|!|\+\+|--|\*|\/|%|\+|-|<|<=|>|>=|==|!=
 <NORMAL>\.\./{integer-constant} {emit_token("OP", yytext);}
 <NORMAL>{operators} { emit_token("OP", yytext); }
 
-<NORMAL>{integer-constant} { emit_token("INT", yytext); }
-<NORMAL>{float-constant}/[^\.]? { emit_token("F", yytext); }
+<NORMAL>{integer-constant}/(\.\.)* { emit_token("INT", yytext); }
+<NORMAL>{float-constant} { emit_token("F", yytext); }
 
 <NORMAL,COMMENT>(.|\n) { fail("scanner rule missing or unsupported character"); }
 <INITIAL>(.|\n)        { fail("scanner did not enter NORMAL state"); }

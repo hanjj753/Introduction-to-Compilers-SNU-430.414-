@@ -30,9 +30,8 @@ Symbol *enter(TokenKind kind, const char *name, size_t length)
 
     int h = 0;
     for (size_t i = 0; i<length; i++) {
-        h = h*3 + name[i];
+        h = (h*33 + name[i]) %  BUCKET_COUNT;
     }
-    h %= BUCKET_COUNT;
 
     Entry *current = buckets[h];
     while(current != NULL) {
