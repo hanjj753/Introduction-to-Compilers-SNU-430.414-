@@ -1,0 +1,4 @@
+# Only these files may enter the image build context.
+**
+!Dockerfile
+!check.sh

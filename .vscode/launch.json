@@ -1,0 +1,83 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Project 1: debug sample",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/projects/project1/src/subc",
+      "args": [
+        "${workspaceFolder}/projects/project1/tests/sample.c"
+      ],
+      "cwd": "${workspaceFolder}/projects/project1",
+      "stopAtEntry": true,
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "miDebuggerPath": "/usr/bin/gdb",
+      "preLaunchTask": "Project 1: build"
+    },
+    {
+      "name": "Project 2: debug",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/projects/project2/src/subc",
+      "args": [
+        "${input:project2Input}"
+      ],
+      "cwd": "${workspaceFolder}/projects/project2",
+      "stopAtEntry": true,
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "miDebuggerPath": "/usr/bin/gdb",
+      "preLaunchTask": "Project 2: build"
+    },
+    {
+      "name": "Project 3: debug",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/projects/project3/src/subc",
+      "args": [
+        "${input:project3Input}"
+      ],
+      "cwd": "${workspaceFolder}/projects/project3",
+      "stopAtEntry": true,
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "miDebuggerPath": "/usr/bin/gdb",
+      "preLaunchTask": "Project 3: build"
+    },
+    {
+      "name": "Project 4: debug",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/projects/project4/src/subc",
+      "args": [
+        "${input:project4Input}",
+        "${workspaceFolder}/projects/project4/program.s"
+      ],
+      "cwd": "${workspaceFolder}/projects/project4",
+      "stopAtEntry": true,
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "miDebuggerPath": "/usr/bin/gdb",
+      "preLaunchTask": "Project 4: build"
+    }
+  ],
+  "inputs": [
+    {
+      "id": "project2Input",
+      "type": "promptString",
+      "description": "Project 2 input path (relative to projects/project2, or absolute)"
+    },
+    {
+      "id": "project3Input",
+      "type": "promptString",
+      "description": "Project 3 input path (relative to projects/project3, or absolute)"
+    },
+    {
+      "id": "project4Input",
+      "type": "promptString",
+      "description": "Project 4 input path (relative to projects/project4, or absolute)"
+    }
+  ]
+}

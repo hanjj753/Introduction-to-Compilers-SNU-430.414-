@@ -1,0 +1,19 @@
+{
+  "name": "Introduction to Compilers — Ubuntu 26.04",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": "."
+  },
+  "remoteUser": "student",
+  "updateRemoteUserUID": true,
+  "init": true,
+  "postCreateCommand": "intcmp-check",
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-vscode.cpptools"],
+      "settings": {
+        "C_Cpp.default.compilerPath": "/usr/bin/gcc"
+      }
+    }
+  }
+}
