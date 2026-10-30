@@ -1,0 +1,10 @@
+int main() {
+    for (;;) ;
+    for (i = 0;;) ;
+    for (; i < 10;) ;
+    for (;; i++) ;
+    for (i = 0; i < 10;) ;
+    for (i = 0;; i++) ;
+    for (; i < 10; i++) ;
+    for (i = 0; i < 10; i++) ;
+}

@@ -18,6 +18,22 @@ special_char  \\[nt]
   /* Complete keyword rules. Return Bison tokens to the parser. */
 <NORMAL>"int"|"char"             { return TYPE; }
 <NORMAL>"struct"                 { return STRUCT; }
+<NORMAL>"NULL"                   { return SYM_NULL; }
+<NORMAL>"return"                 { return RETURN; }
+<NORMAL>"if"                     { return IF; }
+<NORMAL>"else"                   { return ELSE; }
+<NORMAL>"while"                  { return WHILE; }
+<NORMAL>"for"                    { return FOR; }
+<NORMAL>"break"                  { return BREAK; }
+<NORMAL>"continue"               { return CONTINUE; }
+
+<NORMAL>"||"                     { return LOGICAL_OR; }
+<NORMAL>"&&"                     { return LOGICAL_AND; }
+<NORMAL>"<"|"<="|">"|">="        { return RELOP; }
+<NORMAL>"=="|"!="                { return EQUOP; }
+<NORMAL>"++"                     { return INCOP; }
+<NORMAL>"--"                     { return DECOP; }
+<NORMAL>"->"                     { return STRUCTOP; }
 
   /* stringVal borrows scanner or table storage; the parser does not own it.
    * Reduction actions need not read or copy lexemes. Do not free these pointers
@@ -45,8 +61,23 @@ special_char  \\[nt]
 }
 
   /* Complete operator and punctuation rules. */
+<NORMAL>"="                      { return '='; }
+<NORMAL>"."                      { return '.'; }
 <NORMAL>","                      { return ','; }
 <NORMAL>";"                      { return ';'; }
+<NORMAL>"!"                      { return '!'; }
+<NORMAL>"+"                      { return '+'; }
+<NORMAL>"-"                      { return '-'; }
+<NORMAL>"*"                      { return '*'; }
+<NORMAL>"&"                      { return '&'; }
+<NORMAL>"%"                      { return '%'; }
+<NORMAL>"/"                      { return '/'; }
+<NORMAL>"("                      { return '('; }
+<NORMAL>")"                      { return ')'; }
+<NORMAL>"["                      { return '['; }
+<NORMAL>"]"                      { return ']'; }
+<NORMAL>"{"                      { return '{'; }
+<NORMAL>"}"                      { return '}'; }
 
   /* Supplied whitespace, nested comments, diagnostics, and EOF handling. */
 <NORMAL>{whitespace}             { /* No token. */ }

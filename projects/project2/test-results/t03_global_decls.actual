@@ -1,0 +1,22 @@
+ext_def_list->epsilon
+type_specifier->TYPE
+pointers->epsilon
+ext_def->type_specifier pointers ID ';'
+ext_def_list->ext_def_list ext_def
+type_specifier->TYPE
+pointers->epsilon
+ext_def->type_specifier pointers ID ';'
+ext_def_list->ext_def_list ext_def
+type_specifier->TYPE
+pointers->'*'
+ext_def->type_specifier pointers ID ';'
+ext_def_list->ext_def_list ext_def
+type_specifier->TYPE
+pointers->epsilon
+ext_def->type_specifier pointers ID '[' INTEGER_CONST ']' ';'
+ext_def_list->ext_def_list ext_def
+type_specifier->TYPE
+pointers->'*'
+ext_def->type_specifier pointers ID '[' INTEGER_CONST ']' ';'
+ext_def_list->ext_def_list ext_def
+program->ext_def_list
